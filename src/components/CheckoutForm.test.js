@@ -36,13 +36,16 @@ test("shows success message on submit with form details", async () =>  {
    //todo: ASSERT
    await waitFor(() =>{
       const successMessageOutput = screen.queryByTestId(/successMessage/i);
+      // making sure that all outputs are in the DOM
       const firstNameOutput = screen.getByText(/david/i);
       const lastNameOutput = screen.getByText(/fletcher/i);
       const addressOutput = screen.getByText(/555 ricktor street/i);
       const cityOutput = screen.getByText(/nowhere/i);
       const stateOutput = screen.getByText(/pa/i);
       const zipOutput = screen.getByText(/00000/i);
-
+      // tried to do this with getAllBy___ but nothing was working quite how i wanted it to
+      //even put all the texts to be the same value, but that was not working either
+      
       expect(successMessageOutput).toBeInTheDocument();
       expect(firstNameOutput).toBeInTheDocument();
       expect(lastNameOutput).toBeInTheDocument();
@@ -50,6 +53,5 @@ test("shows success message on submit with form details", async () =>  {
       expect(cityOutput).toBeInTheDocument();
       expect(stateOutput).toBeInTheDocument();
       expect(zipOutput).toBeInTheDocument();
-      
    })
 });
