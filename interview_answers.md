@@ -3,8 +3,12 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What are the main differences between a stateful and a functional component?
 
+   A stateful component is used for the purposes of modular behavior - mostly when using Class components, we will separate our state to be controlled and dictated by a stateful component. The main reason for this is because we cannot use a useEffect in Class Components. Functional components accept the use of useEffect, so stateful components are not necessary
+
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
 
 3. Define stateful logic.
 
 4. What are the three step of creating a successful test? What is done in each phase?
+
+
