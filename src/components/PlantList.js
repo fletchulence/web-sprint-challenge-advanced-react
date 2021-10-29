@@ -19,7 +19,6 @@ export default class PlantList extends Component {
       .catch(err =>{
         console.error(err)
       })
-
   }
   // when the component mounts:
   //   - fetch data from the server endpoint - http://localhost:3333/plants

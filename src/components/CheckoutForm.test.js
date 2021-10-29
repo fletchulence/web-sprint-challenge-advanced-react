@@ -9,4 +9,8 @@ test("renders without errors", () => {
    render(<CheckoutForm/>)
 });
 
-test("shows success message on submit with form details", () => {});
+test("shows success message on submit with form details", () => {
+   //todo: ARRANGE
+   //todo: ACT
+   //todo: ASSERT
+});
