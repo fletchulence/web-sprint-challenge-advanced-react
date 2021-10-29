@@ -17,8 +17,7 @@ const initialValue = {
 
 const CheckoutForm = (props) => {
   // const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  // const [showSuccessMessage, handleSubmit] = useForm(false);
-  const [values, handleChanges, handleSubmit] = useForm(initialValue);
+  const [values, handleChanges, handleSubmit, showSuccessMessage] = useForm(initialValue);
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
@@ -68,7 +67,7 @@ const CheckoutForm = (props) => {
         <button>Checkout</button>
       </form>
 
-      {props.showSuccessMessage && (
+      {showSuccessMessage && (
         <div className="success-message" data-testid="successMessage">
           <p>
             You have ordered some plants! Woo-hoo! <span role="img">🎉</span>
