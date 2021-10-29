@@ -23,22 +23,33 @@ test("shows success message on submit with form details", async () =>  {
    const stateInput = screen.getByLabelText(/state:/i);
    const zipInput = screen.getByLabelText(/zip:/i);
 
-   userEvent.type(firstNameInput, 'fletcher');
+   userEvent.type(firstNameInput, 'DAVID');
    userEvent.type(lastNameInput, 'FLETCHER');
-   userEvent.type(addressInput, 'fletcher');
-   userEvent.type(cityInput, 'fletcher');
-   userEvent.type(stateInput, 'fletcher');
-   userEvent.type(zipInput, 'fletcher');
+   userEvent.type(addressInput, '555 RICKTOR STREET');
+   userEvent.type(cityInput, 'NOWHERE');
+   userEvent.type(stateInput, 'PA');
+   userEvent.type(zipInput, '00000');
 
    const button = screen.getByRole('button');
    userEvent.click(button);
 
    //todo: ASSERT
    await waitFor(() =>{
-      const successMessageDisplay = screen.queryByTestId("successMessage");
-      const successMessageOutput = screen.queryAllByText(/fletcher/i)
+      const successMessageOutput = screen.queryByTestId(/successMessage/i);
+      const firstNameOutput = screen.getByText(/david/i);
+      const lastNameOutput = screen.getByText(/fletcher/i);
+      const addressOutput = screen.getByText(/555 ricktor street/i);
+      const cityOutput = screen.getByText(/nowhere/i);
+      const stateOutput = screen.getByText(/pa/i);
+      const zipOutput = screen.getByText(/00000/i);
 
-      expect(successMessageDisplay).toBeInTheDocument();
-      expect(successMessageOutput).toBeCalledTimes(6);
+      expect(successMessageOutput).toBeInTheDocument();
+      expect(firstNameOutput).toBeInTheDocument();
+      expect(lastNameOutput).toBeInTheDocument();
+      expect(addressOutput).toBeInTheDocument();
+      expect(cityOutput).toBeInTheDocument();
+      expect(stateOutput).toBeInTheDocument();
+      expect(zipOutput).toBeInTheDocument();
+      
    })
 });
