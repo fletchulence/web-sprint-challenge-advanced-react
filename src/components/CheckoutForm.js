@@ -54,7 +54,7 @@ const CheckoutForm = (props) => {
           Address:
           <input
             name="address"
-            value={values.address}
+            value={this.values.address}
             onChange={this.props.handleChanges}
           />
         </label>
