@@ -39,7 +39,7 @@ const CheckoutForm = (props) => {
           <input
             name="firstName"
             value={values.firstName}
-            onChange={props.handleChanges}
+            onChange={handleChanges}
           />
         </label>
         <label>
@@ -47,15 +47,15 @@ const CheckoutForm = (props) => {
           <input
             name="lastName"
             value={values.lastName}
-            onChange={this.props.handleChanges}
+            onChange={handleChanges}
           />
         </label>
         <label>
           Address:
           <input
             name="address"
-            value={this.values.address}
-            onChange={this.props.handleChanges}
+            value={values.address}
+            onChange={handleChanges}
           />
         </label>
         <label>
