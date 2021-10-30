@@ -1,18 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-// const getPlants = async () =>{
-//   const servicePromise = axios.get(`http://localhost:3333/plants`)
-
-//   return servicePromise
-//     .then(res =>{
-//       return res.data
-//     })
-//     .catch(err =>{
-//       console.error(err)
-//     })
-// }
-
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
   state = {
@@ -23,10 +11,8 @@ export default class PlantList extends Component {
   //   - fetch data from the server endpoint - http://localhost:3333/plants
   //   - set the returned plants array to this.state.plants
   componentDidMount(){
-    // getPlants()
     axios.get(`http://localhost:3333/plants`)
       .then(res =>{
-        console.log(res.data)
         this.setState({
           ...this.state.plants,
           plants: res.data
@@ -37,9 +23,9 @@ export default class PlantList extends Component {
       })
     }
 
-    componentWillUnmount(plants){
-      if(this.state === false){
-        return console.log('cleaning')
+    componentDidUnmount(plants){
+      if(plants === []){
+        return console.log('Component has unmounted')
       }
     }
 
