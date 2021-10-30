@@ -35,12 +35,12 @@ test("shows success message on submit with form details", async () =>  {
       //making sure the successMessage prints
       const successMessageOutput = await screen.findByTestId(/successMessage/i);
       // making sure that all outputs are in the DOM
-      const firstNameOutput = screen.getByText(/david/i);
-      const lastNameOutput = screen.getByText(/fletcher/i);
-      const addressOutput = screen.getByText(/555 ricktor street/i);
-      const cityOutput = screen.getByText(/nowhere/i);
-      const stateOutput = screen.getByText(/pa/i);
-      const zipOutput = screen.getByText(/00000/i);
+      const firstNameOutput = screen.getByPlaceholderText(/please enter your first name/i);
+      const lastNameOutput = screen.getByPlaceholderText(/please enter your last name/i);
+      const addressOutput = screen.getByPlaceholderText(/please enter your street address/i);
+      const cityOutput = screen.getByPlaceholderText(/please enter the city you live in/i);
+      const stateOutput = screen.getByPlaceholderText(/please enter state you are located/i);
+      const zipOutput = screen.getByPlaceholderText(/please enter your ZIP code/i);
       // tried to do this with getAllBy___ but nothing was working quite how i wanted it to
       //even put all the texts to be the same value, but that was not working either
       
