@@ -14,8 +14,6 @@ test("shows success message on submit with form details", async () =>  {
    //todo: ARRANGE
    render(<CheckoutForm/>);
    //todo: ACT
-   // const textInput = screen.getall
-
    const firstNameInput = screen.getByLabelText(/first name:/i);
    const lastNameInput = screen.getByLabelText(/last name:/i);
    const addressInput = screen.getByLabelText(/address:/i);
@@ -34,8 +32,8 @@ test("shows success message on submit with form details", async () =>  {
    userEvent.click(button);
 
    //todo: ASSERT
-   await waitFor(() =>{
-      const successMessageOutput = screen.queryByTestId(/successMessage/i);
+      //making sure the successMessage prints
+      const successMessageOutput = await screen.findByTestId(/successMessage/i);
       // making sure that all outputs are in the DOM
       const firstNameOutput = screen.getByText(/david/i);
       const lastNameOutput = screen.getByText(/fletcher/i);
@@ -53,5 +51,5 @@ test("shows success message on submit with form details", async () =>  {
       expect(cityOutput).toBeInTheDocument();
       expect(stateOutput).toBeInTheDocument();
       expect(zipOutput).toBeInTheDocument();
-   })
+   
 });
