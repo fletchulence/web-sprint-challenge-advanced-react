@@ -23,14 +23,10 @@ export default class PlantList extends Component {
       })
     }
 
-    componentDidUnmount(plants){
-      if(plants === []){
-        return console.log('Component has unmounted')
-      }
+    componentWillUnmount(){
+      console.log(`Component unmounted`)
     }
 
-    
-    
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
