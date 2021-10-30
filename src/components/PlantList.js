@@ -15,7 +15,7 @@ export default class PlantList extends Component {
       .then(res =>{
         // console.log(res.data)
         this.setState({
-          ...this.state.plants,
+          ...this.state,
           plants: res.data
         })
       })
