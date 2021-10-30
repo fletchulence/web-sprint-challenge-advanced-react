@@ -51,5 +51,4 @@ test("shows success message on submit with form details", async () =>  {
       expect(cityOutput).toBeInTheDocument();
       expect(stateOutput).toBeInTheDocument();
       expect(zipOutput).toBeInTheDocument();
-   
 });

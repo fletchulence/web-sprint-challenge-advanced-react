@@ -48,7 +48,7 @@ function App() {
         <Route
           exact
           path="/"
-          render={() => <PlantList addToCart={addToCart} removeFromCart={removeFromCart} />}
+          render={() => <PlantList addToCart={addToCart} />}
         />
         <Route
           path="/cart"

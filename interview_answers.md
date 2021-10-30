@@ -7,16 +7,16 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 2. When will a componentWillMount function be called? What about a componentWillUpdate?
 
-   - componentWillMount and componentWillUpdate are not in use anymore -- i think the question is asking about componentDidMount/Update
+   - componentWillMount and componentWillUpdate are both legacy and should not be used in 'new code' according to *https://reactjs.org/docs/react-component.html* 
 
-
+   - the concept is still the same however, 
    - componentDidMount and componentDidUpdate are functions that are mostly reserved for Class based components. Functional components dont need these because they can call useEffects and have functional purpose. 
-   - componentDidMount is called after render is initialized 
-   -componentDidUpdate is called when 
+   - componentDidMount is called immediately after the component mounts. This is used most likely when instantiating a network request (API call).
+   -componentDidUpdate is called right after the component  
 
 3. Define stateful logic.
 
-   - Stateful logic refers to a programming logic that is used to discuss how a single device can both store, and manipulate logical operations. is anything that is used to manipulate state in one way or another. Stateful logic is used to create dry, modular code that can be used in multiple places in your App
+   - Stateful logic refers to a programming logic that is used to discuss how a single device can create, store, and manipulate logical operations. is anything that is used to manipulate state in one way or another. Stateful logic is used to create dry, modular code that can be used in multiple places in your App
 
 4. What are the three step of creating a successful test? What is done in each phase?
 
