@@ -9,10 +9,8 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
    - componentWillMount and componentWillUpdate are both legacy and should not be used in 'new code' according to *https://reactjs.org/docs/react-component.html* 
 
-   - the concept is still the same however, 
-   - componentDidMount and componentDidUpdate are functions that are mostly reserved for Class based components. Functional components dont need these because they can call useEffects and have functional purpose. 
-   - componentDidMount is called immediately after the component mounts. This is used most likely when instantiating a network request (API call).
-   -componentDidUpdate is called right after the component  
+   - the concept is still the same however, componentWillMount will fire immediately before a component mounts. It is called before a render() so that setting state will not trigger a rerender 
+   -componentWillUpdate is called every time there is a rerender - meaning this.setState() has been called. NOTE: if we trigger a this.setState() in here there will be an infinate loop...
 
 3. Define stateful logic.
 
