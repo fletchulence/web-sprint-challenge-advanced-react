@@ -90,11 +90,11 @@ const CheckoutForm = (props) => {
           <br />
           <br />
           <p>
-            {values.firstName} {values.lastName}
+            <span data-testid="firstnameDisplay">{values.firstName}</span> <span data-testid="lastnameDisplay">{values.lastName}</span>
           </p>
-          <p>{values.address}</p>
+          <p data-testid="addressDisplay">{values.address}</p>
           <p>
-            {values.city}, {values.state} {values.zip}
+          <span data-testid="cityDisplay">{values.city}</span>, <span data-testid='stateDisplay'>{values.state}</span> <span data-testid="zipDisplay">{values.zip}</span>
           </p>
         </div>
       )}
