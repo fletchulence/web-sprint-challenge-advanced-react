@@ -32,23 +32,23 @@ test("shows success message on submit with form details", async () =>  {
    userEvent.click(button);
 
    //todo: ASSERT
-      //making sure the successMessage prints
-      const successMessageOutput = await screen.findByTestId(/successMessage/i);
-      // making sure that all outputs are in the DOM
-      const firstNameOutput = screen.getByPlaceholderText(/please enter your first name/i);
-      const lastNameOutput = screen.getByPlaceholderText(/please enter your last name/i);
-      const addressOutput = screen.getByPlaceholderText(/please enter your street address/i);
-      const cityOutput = screen.getByPlaceholderText(/please enter the city you live in/i);
-      const stateOutput = screen.getByPlaceholderText(/please enter state you are located/i);
-      const zipOutput = screen.getByPlaceholderText(/please enter your ZIP code/i);
-      // tried to do this with getAllBy___ but nothing was working quite how i wanted it to
-      //even put all the texts to be the same value, but that was not working either
-      
-      expect(successMessageOutput).toBeInTheDocument();
-      expect(firstNameOutput).toBeInTheDocument();
-      expect(lastNameOutput).toBeInTheDocument();
-      expect(addressOutput).toBeInTheDocument();
-      expect(cityOutput).toBeInTheDocument();
-      expect(stateOutput).toBeInTheDocument();
-      expect(zipOutput).toBeInTheDocument();
+   //making sure the successMessage prints
+   const successMessageOutput = await screen.findByTestId(/successMessage/i);
+   // making sure that all outputs are in the DOM
+   const firstNameOutput = screen.getByTestId(/firstnameDisplay/i);
+   const lastNameOutput = screen.getByTestId(/lastnameDisplay/i);
+   const addressOutput = screen.getByTestId(/addressDisplay/i);
+   const cityOutput = screen.getByTestId(/cityDisplay/i);
+   const stateOutput = screen.getByTestId(/stateDisplay/i);
+   const zipOutput = screen.getByTestId(/zipDisplay/i);
+   // tried to do this with getAllBy___ but nothing was working quite how i wanted it to
+   //even put all the texts to be the same value, but that was not working either
+   
+   expect(successMessageOutput).toBeInTheDocument();
+   expect(firstNameOutput).toHaveTextContent('DAVID');
+   expect(lastNameOutput).toHaveTextContent('FLETCHER');
+   expect(addressOutput).toHaveTextContent('555 RICKTOR STREET');
+   expect(cityOutput).toHaveTextContent('NOWHERE');
+   expect(stateOutput).toHaveTextContent('PA');
+   expect(zipOutput).toHaveTextContent('00000');
 });
